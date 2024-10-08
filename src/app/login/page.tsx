@@ -54,6 +54,7 @@ const LoginPage = () => {
           <h1 className={styles.title}>เข้าสู่ระบบ</h1>
           <input
             type="email"
+            name="email"
             placeholder="อีเมล"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -62,6 +63,7 @@ const LoginPage = () => {
           />
           <input
             type="password"
+            name="password"
             placeholder="รหัสผ่าน"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

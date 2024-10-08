@@ -40,8 +40,8 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <li><Link href="/login">เข้าสู่ระบบ</Link></li>
-            <li><Link href="/register">สมัครสมาชิก</Link></li>
+            <li ><Link className='login' href="/login">เข้าสู่ระบบ</Link></li>
+            <li ><Link className='register' href="/register">สมัครสมาชิก</Link></li>
           </>
         )}
       </ul>
