@@ -3,7 +3,7 @@
 import Navbar from '@/navbar';  // Import the Navbar component
 import styles from './HomePage.module.css';
 
-const DashboardPage = () => {
+const HomePage = () => {
   return (
     <div className={styles.container}>
       <Navbar /> {/* Include the Navbar */}
@@ -20,4 +20,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default HomePage;
