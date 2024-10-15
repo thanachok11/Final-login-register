@@ -64,3 +64,7 @@
     position: relative;
     top: 20px; /* ระยะห่างจากด้านบนเพื่อให้แสดงผลด้านล่าง navbar */
   }
+  .link {
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+    color: inherit; /* ใช้สีตามปกติของข้อความ */
+  }

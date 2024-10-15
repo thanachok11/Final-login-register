@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '../node_modules/next/link';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 
@@ -25,10 +25,9 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>Balance Care</div>
+      <Link href="/dashboard" className={styles.link}>
+      <div className={styles.logo}>Balance Care</div></Link>
       <ul className={styles.navLinks}>
-        <li><Link href="/">หน้าหลัก</Link></li>
-
         {userEmail ? (
           <>
             <li>

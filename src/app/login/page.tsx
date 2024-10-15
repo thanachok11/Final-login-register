@@ -9,6 +9,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const [rememberMe, setRememberMe] = useState(false); // สถานะของ "จดจำฉัน"
   const router = useRouter();
 
@@ -25,18 +26,18 @@ const LoginPage = () => {
       });
 
       if (response.ok) {
+        setSuccessMessage('เข้าสู่ระบบสำเร็จ!');
         const data = await response.json();
-        
         // บันทึก token และ email ลงใน localStorage
         localStorage.setItem('token', data.token);
         localStorage.setItem('userEmail', email);
-
+        setTimeout(() => {
         // ตรวจสอบว่า email เป็น admin หรือไม่
         if (email === 'admin@gmail.com') {  // เปลี่ยนอีเมลเป็นของ admin
           router.push('/admin');  // Redirect ไปยังหน้า admin page
         } else {
           router.push('/dashboard');  // Redirect ไปยังหน้า dashboard ปกติ
-        }
+        }}, 2000);
       } else {
         const data = await response.json();
         setError(data.message || 'เข้าสู่ระบบล้มเหลว');
@@ -80,8 +81,9 @@ const LoginPage = () => {
             <label className={styles.label} htmlFor="rememberMe">จดจำฉัน</label>
           </div>
           <button type="submit" className={styles.button}>เข้าสู่ระบบ</button>
+          {error && <p className={styles.error}>{error}</p>}
+          {successMessage && <p className={styles.success}>{successMessage}</p>}
         </form>
-        {error && <p className={styles.error}>{error}</p>}
       </div>
     </div>
   );

@@ -22,7 +22,10 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
   }
-  
+  .cardLink {
+    text-decoration: none; /* ลบขีดเส้นใต้ลิงก์ */
+    color: inherit; /* ให้สีข้อความไม่เปลี่ยน */
+  }
   .card {
     background-color: white;
     padding: 20px;

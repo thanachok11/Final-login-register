@@ -132,8 +132,8 @@ const RegisterPage = () => {
           <button type="submit" className={styles.button}>สมัครสมาชิก</button>
           {/* แสดง error ด้านล่างปุ่ม */}
           {error && <p className={styles.error}>{error}</p>}
+          {successMessage && <p className={styles.success}>{successMessage}</p>}
         </form>
-        {successMessage && <p className={styles.success}>{successMessage}</p>}
       </div>
     </div>
   );
